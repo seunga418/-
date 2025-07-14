@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(35, 43%, 96%); /* #FFF9F1 cream */
+  --foreground: hsl(228, 17%, 22%); /* #2D2F41 navy */
+  --muted: hsl(228, 17%, 22%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(228, 17%, 22%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(228, 17%, 22%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(256, 80%, 74%); /* #9B86F3 lavender */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(35, 43%, 96%);
+  --secondary-foreground: hsl(228, 17%, 22%);
+  --accent: hsl(35, 43%, 96%);
+  --accent-foreground: hsl(228, 17%, 22%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(228, 17%, 22%);
+  --radius: 0.75rem;
+  
+  /* Custom colors for ExcuseMe */
+  --lavender: hsl(256, 80%, 74%); /* #9B86F3 */
+  --cream: hsl(35, 43%, 96%); /* #FFF9F1 */
+  --navy: hsl(228, 17%, 22%); /* #2D2F41 */
+  --coral: hsl(0, 79%, 70%); /* #FF6B6B */
+}
+
+.dark {
+  --background: hsl(228, 17%, 22%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(228, 17%, 22%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(228, 17%, 22%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(256, 80%, 74%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: var(--cream);
+    color: var(--navy);
+  }
+}
+
+@layer components {
+  .category-btn {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .category-btn.active {
+    background-color: hsl(256, 80%, 74%, 0.2);
+    border-color: var(--lavender);
+    color: var(--lavender);
+  }
+  
+  .category-btn:not(.active) {
+    border-color: hsl(0, 0%, 90%);
+    color: var(--navy);
+  }
+  
+  .category-btn:not(.active):hover {
+    background-color: hsl(256, 80%, 74%, 0.1);
+    border-color: var(--lavender);
+    color: var(--lavender);
+  }
+
+  .chat-message-bot {
+    background-color: hsl(256, 80%, 74%, 0.1);
+    border-radius: 1rem 1rem 1rem 0.25rem;
+  }
+
+  .chat-message-user {
+    background-color: var(--lavender);
+    border-radius: 1rem 1rem 0.25rem 1rem;
+    color: white;
+  }
+}
